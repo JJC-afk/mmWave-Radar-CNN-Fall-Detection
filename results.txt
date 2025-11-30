@@ -1,0 +1,105 @@
+
+--- Feature Comparison: Fall vs Not-Fall ---
+
+Feature         Fall Mean NotFall Mean   Difference
+----------------------------------------------------
+num_objs            3.478        3.990       -0.512
+avg_x               0.156        0.095        0.061
+range_x             0.482        0.575       -0.093
+avg_vel             0.593        0.293        0.300
+std_vel             0.043        0.031        0.012
+max_vel             0.726        0.431        0.295
+min_vel             0.494        0.189        0.305
+avg_snr           273.828      263.477       10.351
+
+--- Dataset Split ---
+Train+Validate: 136 samples
+Test: 28 samples
+
+--- 5-Fold Cross-Validation ---
+
+Fold 1/5:
+ Train: 108 (40 falls)
+ Val: 28 (10 falls)
+ Early stopping at epoch 16
+ Train Acc: 100.00%
+ Val Acc: 96.43%
+ Confusion Matrix:
+[[18  0]
+ [ 1  9]]
+
+Fold 2/5:
+ Train: 109 (40 falls)
+ Val: 27 (10 falls)
+ Early stopping at epoch 19
+ Train Acc: 100.00%
+ Val Acc: 92.59%
+ Confusion Matrix:
+[[16  1]
+ [ 1  9]]
+
+Fold 3/5:
+ Train: 109 (40 falls)
+ Val: 27 (10 falls)
+ Early stopping at epoch 18
+ Train Acc: 100.00%
+ Val Acc: 96.30%
+ Confusion Matrix:
+[[17  0]
+ [ 1  9]]
+
+Fold 4/5:
+ Train: 109 (40 falls)
+ Val: 27 (10 falls)
+ Early stopping at epoch 28
+ Train Acc: 100.00%
+ Val Acc: 100.00%
+ Confusion Matrix:
+[[17  0]
+ [ 0 10]]
+
+Fold 5/5:
+ Train: 109 (40 falls)
+ Val: 27 (10 falls)
+ Early stopping at epoch 27
+ Train Acc: 100.00%
+ Val Acc: 88.89%
+ Confusion Matrix:
+[[14  3]
+ [ 0 10]]
+
+CROSS-VALIDATION SUMMARY
+
+Training Accuracy: 100.00% ± 0.00%
+Validation Accuracy: 94.84% ± 3.79%
+
+Aggregated Confusion Matrix (all validation folds):
+[[82  4]
+ [ 3 47]]
+True Negatives:  82 (60.3%)
+False Positives: 4 (2.9%) - false alarms
+False Negatives: 3 (2.2%) - MISSED FALLS
+True Positives:  47 (34.6%)
+
+FINAL TEST SET EVALUATION
+
+Retraining on full train+val set...
+ Early stopping at epoch 17
+
+Test Accuracy: 100.00%
+Test Confusion Matrix:
+[[18  0]
+ [ 0 10]]
+
+Test Metrics:
+True Negatives:  18
+False Positives: 0 - false alarms
+False Negatives: 0 - MISSED FALLS
+True Positives:  10
+Fall Recall:     100.0%
+
+FINAL SUMMARY
+Validation Accuracy: 94.84% ± 3.79%
+Test Accuracy:          100.00%
+Missed Falls (Test):      0 out of 10
+False Alarms (Test):      0 out of 18

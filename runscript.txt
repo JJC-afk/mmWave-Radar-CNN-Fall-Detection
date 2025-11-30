@@ -1,0 +1,3 @@
+cd /d "H:\My Drive\Capstone Python Files\tlv_to_json_demo\demo"
+
+python demo.py --command_port=COM3 --data_port=COM4 --visualizer_data_loc=datalocation.dat
